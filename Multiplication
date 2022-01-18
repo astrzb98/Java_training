@@ -1,0 +1,55 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
+
+public class Multiplication {
+    public static void main(String args[]) {
+        
+        //String do zapytania dla usera
+        String pattern = "Ile to jest ";
+        
+        //Zmienne do mnożenia
+        int a;
+        int b;
+        int mul;
+        int questionsCount = 0;
+        int input;
+        
+        Scanner sc = new Scanner(System.in);
+        
+        
+        while(questionsCount<5){
+            
+            a = getRandomNumberInRange(1,10);
+            b = getRandomNumberInRange(1,10);
+            mul = a*b;
+            
+            System.out.print(pattern + a + "*" + b + " ? \n");
+            
+            input = sc.nextInt();
+            
+            if(input == mul){
+                System.out.print("Dobry wynik \n");
+                questionsCount += 1;
+            }
+                
+            else{
+                System.out.print("Zły wynik \n");
+            }
+            
+            System.out.print("Poprawna próba : " + questionsCount+ "\n");
+            
+        }
+        System.out.print("Zdałeś \n");
+        
+
+    }
+    private static int getRandomNumberInRange(int min, int max) {
+		Random r = new Random();
+		return r.nextInt((max - min) + 1) + min;
+	}
+    
+    
+}
+    
